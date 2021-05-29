@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 import React, { Component } from 'react';
 import {Card, CardImg, CardText, CardBody, Breadcrumb, BreadcrumbItem, Button, Modal, ModalHeader, ModalBody, Label} from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -96,7 +97,6 @@ class CommentForm extends Component {
     
     handleSubmit(values) {
         this.toggleModal();
-        //When form is submitted, the add comment action creator will create an action using the values from this form.  Then that action will ge tdipsatched to the reducer which will update the state
         this.props.addComment(this.props.campsiteId, values.rating, values.author, values.text)
 
     }
@@ -133,6 +133,7 @@ class CommentForm extends Component {
                                     <Label htmlFor="author">Your Name</Label>
                                     <Control.text className="form-control" model=".author" id="author" name="author"
                                         placeholder="Your Name"
+                                        // eslint-disable-next-line react/jsx-no-duplicate-props
                                         className = "form-control"
                                         validators = {{
                                             required,
@@ -168,6 +169,6 @@ class CommentForm extends Component {
         )
     }
 }
-//test
+
 
 export default CampsiteInfo;
